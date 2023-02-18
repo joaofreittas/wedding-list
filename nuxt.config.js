@@ -27,5 +27,9 @@ export default {
   modules: [
     'bootstrap-vue/nuxt',
   ],
-  build: {}
+  build: {
+    extend(config) {
+      config.resolve.alias['node-fetch-native'] = require.resolve('node-fetch')
+    }
+  }
 }
